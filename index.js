@@ -14,9 +14,9 @@ const htmlToText = require('html-to-text');
     }
 
     hexo.extend.filter.register('after_post_render', function (data) {
-        const excerptLength = hexo.config.excerpt_length || 300;
+        const excerptLength = hexo.config.excerpt_length || 30;
         const post = sanitize(data.content);
-        const excerpt = post.replace(/^(.{excerptLength}[^\s]*).*/, "$1");
+        const excerpt = post.split(" ").splice(0, no_words).join(" ");
         data.excerpt = excerpt;
         return data;
     });
