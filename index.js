@@ -16,7 +16,7 @@ const htmlToText = require('html-to-text');
     hexo.extend.filter.register('after_post_render', function (data) {
         const excerptLength = hexo.config.excerpt_length || 300;
         const post = sanitize(data.content);
-        const excerpt = post.substr(0, excerptLength);
+        const excerpt = post.replace(/^(.{excerptLength}[^\s]*).*/, "$1");
         data.excerpt = excerpt;
         return data;
     });
