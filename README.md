@@ -1,8 +1,6 @@
 ## hexo-auto-excerpt
 
-Hexo supports excerpts by adding <!-- more --> tag. You can automate this by using hexo-auto-excerpt plugin.
-
-This fork creates excerpts by trimming post content to the given number of characters, `excerpt_length`, without trimming words in the process.
+This fork creates excerpts by trimming post content to the given number of words without cutting any words off and appending an elipses (`…`) to the end.
 
 ### Install
 
@@ -10,8 +8,8 @@ This fork creates excerpts by trimming post content to the given number of chara
 npm install --save hexo-auto-excerpt
 ```
 
-### Option
+### Options
 
-excerpt_length: 350 (number of characters)
+`excerpt_length` (number of words)
 
-default length is 300, if not specified.
+Default length is 30 words.
