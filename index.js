@@ -17,7 +17,7 @@ const htmlToText = require('html-to-text');
         const excerptLength = hexo.config.excerpt_length || 30;
         const post = sanitize(data.content);
         const excerpt = post.split(" ").splice(0, excerptLength).join(" ");
-        data.excerpt = excerpt;
+        data.excerpt = excerpt + "…";
         return data;
     });
 })();
