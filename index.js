@@ -14,6 +14,11 @@ const htmlToText = require('html-to-text');
     }
 
     hexo.extend.filter.register('after_post_render', function (data) {
+
+        if (data.excerpt.length > 0) {
+            return data;
+        }
+
         const excerptLength = hexo.config.excerpt_length || 30;
         const post = sanitize(data.content);
         const excerpt = post.split(" ").splice(0, excerptLength).join(" ");
